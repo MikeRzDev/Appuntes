@@ -3,20 +3,12 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:layout_weight="0"
-        android:src="@android:drawable/ic_menu_revert"
-        android:layout_marginTop="20dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Nueva Nota"
-        android:id="@+id/textView2"
+        android:id="@+id/textView_titulo"
         android:layout_weight="0"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"
@@ -27,14 +19,14 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Clase"
-        android:id="@+id/textView4"
+        android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_clase"
         android:layout_weight="0"
         android:spinnerMode="dropdown" />
 
@@ -43,14 +35,14 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Tipo"
-        android:id="@+id/textView3"
+        android:id="@+id/textView2"
         android:layout_weight="0"
         android:layout_gravity="center_horizontal" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner2"
+        android:id="@+id/spinner_tipo"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0"
         android:spinnerMode="dropdown" />
@@ -60,7 +52,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Descripcion"
-        android:id="@+id/textView5"
+        android:id="@+id/textView3"
         android:layout_weight="0"
         android:layout_gravity="center_horizontal" />
 
@@ -69,7 +61,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText6"
+        android:id="@+id/editText_desc"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0"
         android:text="aqui va la informacion que se va a guardar" />
@@ -78,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Aceptar"
-        android:id="@+id/button3"
+        android:id="@+id/button_aceptar"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0" />
 

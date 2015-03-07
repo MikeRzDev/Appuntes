@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +74,10 @@ public class FragmentViewgroupFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // TODO Add your menu entries here
         super.onCreateOptionsMenu(menu, inflater);
-        menu.findItem(R.id.newNote).setVisible(true);
+        //
+        inflater.inflate(R.menu.notas_menu,menu);
+        //menu.findItem(R.id.newNote).setVisible(true);
+
     }
 
 
@@ -86,8 +90,8 @@ public class FragmentViewgroupFragment extends Fragment {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == android.R.id.home) {
-            getFragmentManager().popBackStack();
+        if (id == R.id.newNote) {
+            Toast.makeText(getActivity(),"add me",Toast.LENGTH_LONG).show();
             return true;
         }
 
