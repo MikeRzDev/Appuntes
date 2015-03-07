@@ -55,14 +55,13 @@ public class FragmentSelectgroupFragment extends Fragment {
 
 
 
-        if (grupos.size() < 7) {
+        if (grupos.size() == 0) {
             grupos.add(new Group(R.drawable.matematica, "Calculo 3", "Prof William"));
             grupos.add(new Group(R.drawable.quimica, "Quimica", "Prof Sandra Rizo"));
             grupos.add(new Group(R.drawable.biologia, "Biologia", "Prof Martha Barrera"));
             grupos.add(new Group(R.drawable.literatura, "Literatura", "Prof Nacho Soriano"));
             grupos.add(new Group(R.drawable.quimica, "Quimica II", "Prof Carlos Rodriguez"));
             grupos.add(new Group(R.drawable.literatura, "Literatura Hispana", "Prof Marcos Gantogui"));
-            grupos.add(new Group(R.drawable.biologia, "Biotecnia", "Prof Juan Gomez"));
         }
 
             CustomviewAddedgroupAdapter items = new CustomviewAddedgroupAdapter(getActivity(), grupos);
