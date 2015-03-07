@@ -1,4 +1,4 @@
-package co.projectapp.appuntes;
+package co.projectapp.appuntes.customView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,14 +12,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 
-public class CustomviewTestAdapter extends BaseAdapter {
+import co.projectapp.appuntes.R;
+import co.projectapp.appuntes.model.Note;
 
-    private List<String> objects = new ArrayList<String>();
+public class CustomviewNoteAdapter extends BaseAdapter {
+
+    private List<Note> objects = new ArrayList<Note>();
 
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public CustomviewTestAdapter(Context context) {
+    public CustomviewNoteAdapter(Context context) {
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
     }
@@ -30,7 +33,7 @@ public class CustomviewTestAdapter extends BaseAdapter {
     }
 
     @Override
-    public String getItem(int position) {
+    public Note getItem(int position) {
         return objects.get(position);
     }
 
@@ -42,23 +45,27 @@ public class CustomviewTestAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.customview_test, null);
+            convertView = layoutInflater.inflate(R.layout.customview_note, null);
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.linearLayout = (LinearLayout) convertView.findViewById(R.id.linearLayout);
             viewHolder.textViewDia = (TextView) convertView.findViewById(R.id.textView_dia);
             viewHolder.textViewMes = (TextView) convertView.findViewById(R.id.textView_mes);
             viewHolder.imageViewTipo = (ImageView) convertView.findViewById(R.id.imageView_tipo);
-            viewHolder.textViewTitulo = (TextView) convertView.findViewById(R.id.textView_titulo);
             viewHolder.textViewDescripcion = (TextView) convertView.findViewById(R.id.textView_descripcion);
+            viewHolder.textViewAutor = (TextView) convertView.findViewById(R.id.textView_autor);
 
             convertView.setTag(viewHolder);
         }
-        initializeViews((String)getItem(position), (ViewHolder) convertView.getTag());
+        initializeViews((Note)getItem(position), (ViewHolder) convertView.getTag());
         return convertView;
     }
 
-    private void initializeViews(String object, ViewHolder holder) {
-
+    private void initializeViews(Note object, ViewHolder holder) {
+        holder.textViewAutor.setText(object.getAuthor());
+        holder.textViewDescripcion.setText(object.getDesc());
+        holder.textViewDia.setText(object.getDay());
+        holder.textViewMes.setText(object.getMonth());
+        holder.imageViewTipo.setImageResource(object.getType());
     }
 
     protected class ViewHolder {
@@ -66,7 +73,7 @@ public class CustomviewTestAdapter extends BaseAdapter {
     private TextView textViewDia;
     private TextView textViewMes;
     private ImageView imageViewTipo;
-    private TextView textViewTitulo;
     private TextView textViewDescripcion;
+    private TextView textViewAutor;
     }
 }
