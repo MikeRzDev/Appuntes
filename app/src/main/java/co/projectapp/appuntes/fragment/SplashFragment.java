@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import co.projectapp.appuntes.FragmentLoginFragment;
 import co.projectapp.appuntes.R;
 
 /**
@@ -39,7 +40,7 @@ public class SplashFragment extends Fragment {
             {
                 // This method will be executed once the timer is over
                 SplashFragment.this.getFragmentManager().beginTransaction()
-                        .replace(R.id.container, new TestFragment()).commit();
+                        .replace(R.id.container, new FragmentLoginFragment()).commit();
             }
 
         }, 2000);

@@ -3,19 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEBE7"
     android:orientation="vertical">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listView_cursos"
-        android:layout_gravity="center_horizontal"
-        tools:listitem="@layout/customview_addedgroup"
+        tools:listitem="@layout/customview_note"
+        android:id="@+id/listView2"
         android:background="#ffffff"
         android:choiceMode="singleChoice"
         android:divider="#EEEBE7"
         android:dividerHeight="10dp"
-        android:padding="10dp"
+
         />
 </LinearLayout>

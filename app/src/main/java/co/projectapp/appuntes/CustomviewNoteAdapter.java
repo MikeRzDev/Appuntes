@@ -1,4 +1,4 @@
-package co.projectapp.appuntes.customView;
+package co.projectapp.appuntes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 
-import co.projectapp.appuntes.R;
 import co.projectapp.appuntes.model.Note;
 
 public class CustomviewNoteAdapter extends BaseAdapter {
@@ -25,6 +24,11 @@ public class CustomviewNoteAdapter extends BaseAdapter {
     public CustomviewNoteAdapter(Context context) {
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
+    }
+    public CustomviewNoteAdapter(Context context, List<Note> objects) {
+        this.context = context;
+        this.layoutInflater = LayoutInflater.from(context);
+        this.objects = objects;
     }
 
     @Override
@@ -61,11 +65,11 @@ public class CustomviewNoteAdapter extends BaseAdapter {
     }
 
     private void initializeViews(Note object, ViewHolder holder) {
+        holder.imageViewTipo.setImageResource(object.getType());
+        holder.textViewMes.setText(object.getMonth());
+        holder.textViewDia.setText(object.getDay());
         holder.textViewAutor.setText(object.getAuthor());
         holder.textViewDescripcion.setText(object.getDesc());
-        holder.textViewDia.setText(object.getDay());
-        holder.textViewMes.setText(object.getMonth());
-        holder.imageViewTipo.setImageResource(object.getType());
     }
 
     protected class ViewHolder {

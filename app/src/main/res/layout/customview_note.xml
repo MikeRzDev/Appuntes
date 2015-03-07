@@ -21,7 +21,7 @@
             android:text="25"
             android:id="@+id/textView_dia"
             android:layout_gravity="center_horizontal"
-            android:textSize="50sp" />
+            android:textSize="45sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,9 +51,10 @@
         android:text="estos fueron mis apuntes para matematicas"
         android:id="@+id/textView_descripcion"
         android:maxLines="2"
-        android:maxWidth="220dp"
+        android:maxWidth="210dp"
         android:layout_above="@+id/textView_autor"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:layout_width="wrap_content"

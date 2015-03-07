@@ -1,14 +1,39 @@
 package co.projectapp.appuntes.model;
 
+import co.projectapp.appuntes.R;
+
 /**
  * Created by User on 3/7/2015.
  */
 public class Note {
+    int id;
     String month;
     String day;
     String desc;
     String author;
     int type;
+
+
+    public Note(int id, String month, String day, String desc, String author, int type) {
+        this.id = id;
+        this.month = month;
+        this.day = day;
+        this.desc = desc;
+        this.author = author;
+        this.type = type;
+
+    }
+
+    public Note(String month, String day, String desc, String author, int type) {
+        this.month = month;
+        this.day = day;
+        this.desc = desc;
+        this.author = author;
+        this.type = type;
+
+    }
+
+
 
     public String getMonth() {
         return month;

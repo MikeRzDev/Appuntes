@@ -14,6 +14,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         UIHelper.changeFragment(R.id.container,getFragmentManager(),new SplashFragment(),"SPLASH_FRAGMENT",null);
     }
 
@@ -33,7 +35,8 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == android.R.id.home) {
+            getFragmentManager().popBackStack();
             return true;
         }
 
