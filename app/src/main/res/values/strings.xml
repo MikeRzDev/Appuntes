@@ -8,12 +8,26 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="instituciones_array">
-        <item>UNAB</item>
-        <item>UPB</item>
-        <item>Santo Tomas</item>
-        <item>Col Agustiniano</item>
-        <item>Col La Salle</item>
-        <item>Col Comfenalco</item>
+    <item>UNAB</item>
+    <item>UPB</item>
+    <item>Santo Tomas</item>
+    <item>Col Agustiniano</item>
+    <item>Col La Salle</item>
+    <item>Col Comfenalco</item>
+</string-array>
+
+    <string-array name="tipo_nota">
+        <item>Imagen</item>
+        <item>Nota de Voz</item>
+        <item>Nota Escrita</item>
+        <item>Evento/Calendario</item>
+    </string-array>
+
+    <string-array name="clase">
+        <item>Imagen</item>
+        <item>Nota de Voz</item>
+        <item>Nota Escrita</item>
+        <item>Evento/Calendario</item>
     </string-array>
 
 </resources>

@@ -92,6 +92,7 @@ public class FragmentViewgroupFragment extends Fragment {
         //noinspection SimplifiableIfStatement
         if (id == R.id.newNote) {
             Toast.makeText(getActivity(),"add me",Toast.LENGTH_LONG).show();
+            UIHelper.changeFragment(R.id.container,getFragmentManager(),new FragmentNuevaNotaFragment(),"",null);
             return true;
         }
 
