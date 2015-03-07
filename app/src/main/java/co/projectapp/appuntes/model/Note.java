@@ -30,10 +30,18 @@ public class Note {
         this.desc = desc;
         this.author = author;
         this.type = type;
+        this.id = -1;
 
     }
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getMonth() {
         return month;

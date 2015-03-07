@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.os.Bundle;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -15,8 +14,8 @@ import android.widget.Toast;
 
 public class FragmentRegistroFragment extends Fragment implements View.OnClickListener {
 
-    private TextView textView2;
-    private Spinner spinner;
+    private TextView textViewTitulo;
+    private Spinner spinnerInstituciones;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,37 +27,29 @@ public class FragmentRegistroFragment extends Fragment implements View.OnClickLi
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.imageButton).setOnClickListener(this);
-        textView2 = (TextView) view.findViewById(R.id.textView2);
-        spinner = (Spinner) view.findViewById(R.id.spinner);
-        view.findViewById(R.id.button3).setOnClickListener(this);
-
-
+        textViewTitulo = (TextView) view.findViewById(R.id.textView_titulo);
+        spinnerInstituciones = (Spinner) view.findViewById(R.id.spinner_instituciones);
+        view.findViewById(R.id.button_aceptar).setOnClickListener(this);
     }
 
+    private EditText getEditTextNombre(){
+        return (EditText) getView().findViewById(R.id.editText_nombre);
+    }
+
+    private EditText getEditTextPassword(){
+        return (EditText) getView().findViewById(R.id.editText_password);
+    }
+
+    private EditText getEditTextTelefono(){
+        return (EditText) getView().findViewById(R.id.editText_telefono);
+    }
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.imageButton:
-               getFragmentManager().popBackStack();
-                break;
-            case R.id.button3:
-                Toast.makeText(getActivity(),"Usuario Agregado!",Toast.LENGTH_LONG).show();
+            case R.id.button_aceptar:
+                Toast.makeText(getActivity(), "Usuario Agregado!", Toast.LENGTH_LONG).show();
                 getFragmentManager().popBackStack();
-
                 break;
         }
-    }
-
-    private EditText getEditText3(){
-        return (EditText) getView().findViewById(R.id.editText3);
-    }
-
-    private EditText getEditText4(){
-        return (EditText) getView().findViewById(R.id.editText4);
-    }
-
-    private EditText getEditText5(){
-        return (EditText) getView().findViewById(R.id.editText5);
     }
 }

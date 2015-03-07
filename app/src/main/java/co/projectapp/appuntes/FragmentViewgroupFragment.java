@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -36,6 +37,25 @@ public class FragmentViewgroupFragment extends Fragment {
         notas.add(new Note("Marzo","3","aporte del grupo de camila mendez","Camila Mendez",R.drawable.voz));
         notas.add(new Note("Marzo","10","tablero del profesor","Jose Rodriguez",R.drawable.imagen));
         listView2.setAdapter(adapter);
+        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                if (notas.get(position).getType() == R.drawable.nota) {
+                    int idNote = notas.get(position).getId();
+                    Bundle b = new Bundle();
+                    b.putInt("idnota",idNote);
+                    UIHelper.changeFragment(R.id.container,getFragmentManager(),new FragmentDetalleNotaFragment(),"",b);
+                }
+                else if (notas.get(position).getType() == R.drawable.imagen) {
+                    int idNote = notas.get(position).getId();
+                    Bundle b = new Bundle();
+                    b.putInt("idnota",idNote);
+                    //UIHelper.changeFragment(R.id.container,getFragmentManager(),new FragmentDetalleNotaFragment(),"",b);
+                }
+
+            }
+        });
     }
 
 }

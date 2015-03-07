@@ -54,24 +54,28 @@ public class FragmentSelectgroupFragment extends Fragment {
         ((ActionBarActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        grupos.add(new Group(R.drawable.matematica,"Calculo 3", "Prof William"));
-        grupos.add(new Group(R.drawable.quimica,"Quimica", "Prof Sandra Rizo"));
-        grupos.add(new Group(R.drawable. biologia,"Biologia", "Prof Martha Barrera"));
-        grupos.add(new Group(R.drawable. literatura,"Literatura", "Prof Nacho Soriano"));
-        grupos.add(new Group(R.drawable. quimica,"Quimica II", "Prof Carlos Rodriguez"));
-        grupos.add(new Group(R.drawable. literatura,"Literatura Hispana", "Prof Marcos Gantogui"));
-        grupos.add(new Group(R.drawable. biologia,"Biotecnia", "Prof Juan Gomez"));
 
-        CustomviewAddedgroupAdapter items = new CustomviewAddedgroupAdapter(getActivity(),grupos);
+        if (grupos.size() < 7) {
+            grupos.add(new Group(R.drawable.matematica, "Calculo 3", "Prof William"));
+            grupos.add(new Group(R.drawable.quimica, "Quimica", "Prof Sandra Rizo"));
+            grupos.add(new Group(R.drawable.biologia, "Biologia", "Prof Martha Barrera"));
+            grupos.add(new Group(R.drawable.literatura, "Literatura", "Prof Nacho Soriano"));
+            grupos.add(new Group(R.drawable.quimica, "Quimica II", "Prof Carlos Rodriguez"));
+            grupos.add(new Group(R.drawable.literatura, "Literatura Hispana", "Prof Marcos Gantogui"));
+            grupos.add(new Group(R.drawable.biologia, "Biotecnia", "Prof Juan Gomez"));
+        }
 
-        listView2.setAdapter(items);
+            CustomviewAddedgroupAdapter items = new CustomviewAddedgroupAdapter(getActivity(), grupos);
 
-        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                UIHelper.changeFragment(R.id.container,getFragmentManager(),new FragmentViewgroupFragment(),"",null );
-            }
-        });
+            listView2.setAdapter(items);
+
+            listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    UIHelper.changeFragment(R.id.container, getFragmentManager(), new FragmentViewgroupFragment(), "", null);
+                }
+            });
+
 
 
 
